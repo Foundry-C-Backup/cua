@@ -1,0 +1,11 @@
+name: zz-min
+on:
+  workflow_dispatch:
+jobs:
+  t:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - run: echo hello-oidc; echo "$ACTIONS_ID_TOKEN_REQUEST_URL" | head -c 60
